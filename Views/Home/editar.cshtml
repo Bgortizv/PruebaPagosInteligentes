@@ -1,0 +1,33 @@
+﻿@model PagosInteligentesPrueba.Models.Users
+@{
+    ViewBag.Title = "Editar";
+}
+
+<h2>editar</h2>
+
+<section class="jumbotron">
+    @using (Html.BeginForm("Editar", "Home", FormMethod.Post))
+    {
+        <div class="form-group">
+            @Html.LabelFor(m => m.id, "id")
+            @Html.HiddenFor(m => m.id, new { @class = "form-control" })
+        </div>
+        <div class="form-group">
+            @Html.LabelFor(m => m.celular, "Celular")
+            @Html.TextBoxFor(m => m.celular, new { @class = "form-control" })
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(m => m.direccion, "Dirección")
+            @Html.TextBoxFor(m => m.direccion, new { @class = "form-control" })
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(m => m.ciudad, "Ciudad")
+            @Html.TextBoxFor(m => m.ciudad, new { @class = "form-control" })
+        </div>
+
+        <button type="submit" class="btn btn-primary">Guardar</button>
+    }
+</section>
+

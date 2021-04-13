@@ -1,0 +1,19 @@
+﻿@model IEnumerable<PagosInteligentesPrueba.Models.Users>
+@{
+    ViewBag.Title = "Cargar Archivo";
+}
+
+
+<h3>@ViewBag.Message</h3>
+
+<section class="jumbotron">
+
+    @using(Html.BeginForm("Contact", "Home", FormMethod.Post, new { enctype = "multipart/form-data" }))
+    {
+    <div class="form-group">
+        <input type="file" name="archivoCargado" />
+        <input type="submit" value="Cargar archivo" />
+    </div>
+    }
+<a class="btn btn-default" href="/Home/Index">Regresar</a>
+</section>

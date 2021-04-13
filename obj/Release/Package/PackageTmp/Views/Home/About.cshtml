@@ -1,0 +1,52 @@
+﻿@model IEnumerable<PagosInteligentesPrueba.Models.Users>
+@{
+    ViewBag.Title = "Usuarios";
+}
+<h2>@ViewBag.Title.</h2>
+<h3>@ViewBag.Message</h3>
+
+<section class="jumbotron">
+
+
+
+
+    <table class="table-bordered table-striped table-responsive-lg">
+        <thead>
+            <tr>
+                <th class="bg-light align-content-center alert-heading">ID Usuario</th>
+                <th class="bg-light align-content-center alert-heading">Nombres</th>
+                <th class="bg-light align-content-center alert-heading">Apellidos</th>
+                <th class="bg-light align-content-center alert-heading">Documento</th>
+                <th class="bg-light align-content-center alert-heading">Celular</th>
+                <th class="bg-light align-content-center alert-heading">Dirección</th>
+                <th class="bg-light align-content-center alert-heading">Ciudad</th>
+                <th class="bg-light align-content-center alert-heading">E-mail</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in ViewBag.lista)
+            {
+                <tr>
+                    <td>@item.id</td>
+                    <td>@item.nombres</td>
+                    <td>@item.apellidos</td>
+                    <td>@item.identificacion</td>
+                    <td>@item.celular</td>
+                    <td>@item.direccion</td>
+                    <td>@item.ciudad</td>
+                    <td>@item.email</td>
+                    <td>
+                        <a class="btn btn-primary" href="/Home/Editar/@item.id" a>editar</a>
+                    </td>
+                    <td>
+                        <a class="btn btn-primary" href="/Home/Eliminar/@item.id">Eliminar</a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+    <hr />
+    <a class="btn btn-default" href="/Home/Index">Regresar</a>
+    <a class="btn btn-primary" href="/Home/ExportarArchivo">Exportar</a>
+
+</section>
